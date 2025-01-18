@@ -192,3 +192,4 @@ def calculate_theta_s(gate_list):
 
 def calculate_theta(gate_list, alpha):
     return calculate_theta_f(gate_list) + alpha*calculate_theta_s(gate_list)
+

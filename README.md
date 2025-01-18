@@ -8,5 +8,5 @@ This repository contains the supplementary material for my research project, and
 - Supporting functions used during the research, which may be helpful for reproducing results or exploring the methodology.
 
 ## Contents
-- [Appendix](Appendix)
+- [Appendix](Appendix.md)
 - [Functions](Functions)

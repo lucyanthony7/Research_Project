@@ -18,21 +18,21 @@ def create_bnd(gate_list):
 
     node B {{
         rate_up   = 0.0;
-        rate_down = D ? D*1.0 : 0.0;
+        rate_down = ({logic_1}) ? D*1.0 : 0.0;
     }}
 
     node C {{
         rate_up   = A ? A*1.0 : 0.0;
-        rate_down = E ? E*1.0 : 0.0;
+        rate_down = C ? E*1.0 : 0.0;
     }}
 
     node D {{
-        rate_up   = {logic_1} ? ({logic_1})*1.0 : 0.0;
-        rate_down = E ? E*1.0 : 0.0;
+        rate_up   = ({logic_1}) ? ({logic_1})*1.0 : 0.0;
+        rate_down = D ? E*1.0 : 0.0;
     }}
 
     node E {{
-        rate_up   = {logic_2} ? ({logic_2})*1.0 : 0.0;
+        rate_up   = ({logic_2}) ? ({logic_2})*1.0 : 0.0;
         rate_down = 0.0;
     }}
         """
@@ -120,6 +120,14 @@ def bn_vals_calculator(gate_list, init_conditions_list):
 
     delete_files(['model.bnd', 'model.cfg'], 'model')
 
+    A = bn_vals[1]
+    B = bn_vals[3]
+    C = bn_vals[0]
+    D = bn_vals[2]
+    E = bn_vals[4]
+
+    bn_vals = [A, B, C, D, E]
+
     return bn_vals
 
 
@@ -193,3 +201,5 @@ def calculate_theta_s(gate_list):
 def calculate_theta(gate_list, alpha):
     return calculate_theta_f(gate_list) + alpha*calculate_theta_s(gate_list)
 
+
+print(calculate_theta_f(['A|B','C&D']))

@@ -28,6 +28,6 @@ def generate_logic_gates(node_sets):
     print(logic_gates)
     return logic_gates
 
-nodes = [{'A', 'B'}, {'C', 'D'}]
+node_sets = [{'A', 'B'}, {'C', 'D'}]
 
-print(function.calculate_theta_f(generate_logic_gates(nodes)))
+print(function.calculate_theta_f(generate_logic_gates(node_sets)))

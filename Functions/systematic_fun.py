@@ -1,10 +1,8 @@
 import function
 import itertools
 
-OPERATORS = ['&', '|']
-MAX_NODES = 3
-
 def systematic_logic_gates(node_sets):
+    operators = ['&', '|']
     all_logic_gates = []
 
     for nodes in node_sets:
@@ -15,11 +13,11 @@ def systematic_logic_gates(node_sets):
             logic_expressions.append(node)
 
         for node1, node2 in itertools.combinations(node_list, 2):
-            for op in OPERATORS:
+            for op in operators:
                 logic_expressions.append(f"{node1} {op} {node2}")
 
         for node1, node2, node3 in itertools.permutations(node_list, 3):
-            for op1, op2 in itertools.product(OPERATORS, repeat=2):
+            for op1, op2 in itertools.product(operators, repeat=2):
                 expr = f"({node1} {op1} {node2}) {op2} {node3}"
                 logic_expressions.append(expr)
 

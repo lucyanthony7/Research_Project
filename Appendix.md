@@ -8,7 +8,7 @@ The files in this folder contain the scripts for running the various functions d
 
 - [function.py](#functionpy)
 - [rand_function.py](#rand_functionpy)
-- [exhaustive_fun.py](#systematic_funpy)
+- [exhaustive_fun.py](#exhaustive_funpy)
 
 ### function.py
 

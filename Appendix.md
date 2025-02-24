@@ -4,11 +4,12 @@ This appendix contains additional details for the research project.
 
 ## Functions Folder:
 
-The files in this folder contain the scripts for running the various functions detailed in Section 3 of the project report. We will describe each script in more detail, and explain its purpose in the context of the research project. The files described are the following:
+The files in this folder contain the scripts for running the various functions detailed in Section 3 of the project report. We will describe each script in more detail, and explain its purpose in the context of the research project. The files described in this appendix are the following:
 
-- [Function.py](#Function.py)
+- [function.py](#function.py)
+- [rand_function.py](#rand_function.py)
 
-### Function.py
+### function.py
 
 [function.py](Functions/function.py) contains the function described in Section 3.7. This purpose of this script is to simulate a Boolean Network based on the example network given in Figure 9, and to compute the values of $\Theta_f$ and $\Theta_s$ for a specified `gate_list`. Thus this script enables us to quantitatively compare the 'performance' of different Boolean Models compared to the given PSN. Note that while this script is written for the example model of Figure 9, it is easily generalisable to other simple protein interaction networks. The script consists of the following functions:
 
@@ -18,3 +19,6 @@ The files in this folder contain the scripts for running the various functions d
 - `bn_vals_calculator` takes as inputs the lists of gates and initial conditions and executes the functions previously described. It returns the steady states generated from the MaBoSS simulation as a list of 0s and 1s corresponding to the steady state of each node in the system. Then the function `bn_matrix_calculator` calls the function `bn_vals_calculator` for every set of initial conditions and creates a matrix where each entry is the eventual state of each node, for every initial condition. 
 - The functions `psn_vals_calculator` and `psn_matrix_calculator` compute the same matrix for the PSN, so that we obtain two matrices of identical dimensions.
 - Finally, `calculate_theta_f`, `calculate_theta_s` and `calculate_theta` use the two matrices described above to compare the steady states of the BN, with those from the PSN, for all initial conditions. Thus $\Theta_f$ penalises large differences between the steady states generated, while $\Theta_s$ simply penalises the size of the model to avoid overfitting.
+
+### rand_function.py
+

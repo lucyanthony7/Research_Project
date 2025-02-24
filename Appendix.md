@@ -8,7 +8,7 @@ The files in this folder contain the scripts for running the various functions d
 
 - [function.py](#functionpy)
 - [rand_function.py](#rand_functionpy)
-- [systematic_fun.py](#systematic_funpy)
+- [exhaustive_fun.py](#systematic_funpy)
 
 ### function.py
 
@@ -27,8 +27,9 @@ The files in this folder contain the scripts for running the various functions d
 
 - `generate_logic_gates` inputs a set of nodes and randomly combines AND and OR operators to create a logic gate of maximum length 3. The function also contains a clause to include the NOT operator with a given probability, however for this example we have set this probability to 0. The script then uses `calculate_theta_f` to combute the $\Theta_f$ value for the randomly generated logic gate.
 
-### systematic_fun.py
+### exhaustive_fun.py
 
-[systematic_fun.py](Functions/systematic_fun.py) is detailed in section 4.2 of the project report and works similarly to `random_function.py`, but instead it checks through all logically distinct logic gates exhaustively. It contains the following functions:
+[exhaustive_fun.py](Functions/exhaustive_fun.py) is detailed in section 4.2 of the project report and works similarly to `random_function.py`, but instead it checks through all logically distinct logic gates exhaustively. It contains the following functions:
 
--
+- `exhaustive_logic_gates` inputs a set of nodes and outputs a list of all logically distinct combinations of logic gates of maximum length 3.
+- `evaluate_logic_gates` simply evaluates the $\Theta_f$ value of each of these logic gates and outputs the logic gate with the optimal score, along with this optimal score and the list of all the logic gates and their respective scores.

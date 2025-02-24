@@ -1,7 +1,7 @@
 import function
 import itertools
 
-def systematic_logic_gates(node_sets):
+def exhaustive_logic_gates(node_sets):
     operators = ['&', '|']
     all_logic_gates = []
 
@@ -28,7 +28,7 @@ def systematic_logic_gates(node_sets):
 
 
 def evaluate_logic_gates(node_sets):
-    logic_gate_combinations = systematic_logic_gates(node_sets)
+    logic_gate_combinations = exhaustive_logic_gates(node_sets)
     output = []
 
     for gate_list in logic_gate_combinations:
@@ -36,8 +36,10 @@ def evaluate_logic_gates(node_sets):
         output.append([gate_list, theta_f_score])
 
     best_gate_list, best_score = min(output, key=lambda x: x[1])
-    return [best_gate_list, best_score]
+    return [[best_gate_list, best_score], output]
 
-node_sets = [{'A', 'B'}, {'C', 'D'}]
+node_sets1 = [{'A', 'B'}, {'C', 'D'}]
 
-print(evaluate_logic_gates(node_sets))
+results1 = evaluate_logic_gates(node_sets1)
+best_nodes1, output1 = results1
+

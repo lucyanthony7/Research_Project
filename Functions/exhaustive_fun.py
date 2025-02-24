@@ -36,10 +36,4 @@ def evaluate_logic_gates(node_sets):
         output.append([gate_list, theta_f_score])
 
     best_gate_list, best_score = min(output, key=lambda x: x[1])
-    return [[best_gate_list, best_score], output]
-
-node_sets1 = [{'A', 'B'}, {'C', 'D'}]
-
-results1 = evaluate_logic_gates(node_sets1)
-best_nodes1, output1 = results1
-
+    return [best_gate_list, best_score], output

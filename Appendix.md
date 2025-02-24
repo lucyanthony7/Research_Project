@@ -6,8 +6,8 @@ This appendix contains additional details for the research project.
 
 The files in this folder contain the scripts for running the various functions detailed in Section 3 of the project report. We will describe each script in more detail, and explain its purpose in the context of the research project. The files described in this appendix are the following:
 
-- [function.py](#function.py)
-- [rand_function.py](###rand_function.py)
+- [function.py](#functionpy)
+- [rand_function.py](#rand_functionpy)
 
 ### function.py
 

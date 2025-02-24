@@ -4,10 +4,11 @@ This appendix contains additional details for the research project.
 
 ## Functions Folder:
 
-The files in this folder contain the scripts for running the various functions detailed in Section 3 of the project report. We will describe each script in more detail, and explain its purpose in the context of the research project. The files described in this appendix are the following:
+The files in this folder contain the scripts for running the various functions detailed in Sections 3 and 4 of the project report. We will describe each script in more detail, and explain its purpose in the context of the research project. The files described in this appendix are the following:
 
 - [function.py](#functionpy)
 - [rand_function.py](#rand_functionpy)
+- [systematic_fun.py](#systematic_funpy)
 
 ### function.py
 
@@ -22,3 +23,12 @@ The files in this folder contain the scripts for running the various functions d
 
 ### rand_function.py
 
+[rand_function.py](Functions/rand_function.py) is described in section 4.1 of the project report and utilises the functions described in `function.py` to test randomly generated combinations of logic gates. The script contains the following function:
+
+- `generate_logic_gates` inputs a set of nodes and randomly combines AND and OR operators to create a logic gate of maximum length 3. The function also contains a clause to include the NOT operator with a given probability, however for this example we have set this probability to 0. The script then uses `calculate_theta_f` to combute the $\Theta_f$ value for the randomly generated logic gate.
+
+### systematic_fun.py
+
+[systematic_fun.py](Functions/systematic_fun.py) is detailed in section 4.2 of the project report and works similarly to `random_function.py`, but instead it checks through all logically distinct logic gates exhaustively. It contains the following functions:
+
+-

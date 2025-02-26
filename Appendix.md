@@ -9,6 +9,7 @@ The files in this folder contain the scripts for running the various functions d
 - [function.py](#functionpy)
 - [rand_function.py](#rand_functionpy)
 - [exhaustive_fun.py](#exhaustive_funpy)
+- [bootstrapping.py](#bootstrappingpy)
 
 ### function.py
 
@@ -33,3 +34,7 @@ The files in this folder contain the scripts for running the various functions d
 
 - `exhaustive_logic_gates` inputs a set of nodes and outputs a list of all logically distinct combinations of logic gates of maximum length 3.
 - `evaluate_logic_gates` simply evaluates the $\Theta_f$ value of each of these logic gates and outputs the logic gate with the optimal score, along with this optimal score and the list of all the logic gates and their respective scores.
+
+### bootstrapping.py
+
+[bootstrapping.py](Functions/bootstrapping.py) is used in section 4.3 of the project report, and allows us to construct an acceptance threshold for the value of $\Theta_f$ using confidence intervals with bootstrapping.

@@ -37,4 +37,4 @@ The files in this folder contain the scripts for running the various functions d
 
 ### bootstrapping.py
 
-[bootstrapping.py](Functions/bootstrapping.py) is used in section 4.3 of the project report, and allows us to construct an acceptance threshold for the value of $\Theta_f$ using confidence intervals with bootstrapping.
+[bootstrapping.py](Functions/bootstrapping.py) is used in section 4.3 of the project report, and allows us to construct an acceptance threshold for the value of $\Theta_f$ using confidence intervals with bootstrapping. Note that the proposed `node_sets` and the chosen `confidence_level` of 90% can be easily adjusted.

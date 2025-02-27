@@ -67,6 +67,7 @@ def simulate_bn(model, init_state, n_real=1000, histogram=False, trajectories=Fa
 
 model = '''
     A + B -> C; A*B;
+    C -> B; C;
     A = 0; B = 1; C = 1;
     '''
 n_real = 1000 # number of realisations

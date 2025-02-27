@@ -42,4 +42,6 @@ The files in this folder contain the scripts for running the various functions d
 
 ### SSanalysis.py
 
-[SSanalysis.py](Functions/SSanalysis.py]
+[SSanalysis.py](Functions/SSanalysis.py) is described in section 5.1 of the project report and contains the code for computing the transition matrix for the single state analysis method. The functions used are detailed below:
+
+- `simulate_bn` takes as inputs the PSN model (in Tellurium form), the initial state of the PSN, the number of realisations, and two optional arguments which print a Histogram of results and a trajectory plot if initialised to True. This function performs the Tellurium simulation for the given number of realisations, initialised at the given set of initial conditions. It then binarises the time-series data from this simulation using the threshold of 0.5. The function also uses binary encoding for easier identification of system states. For each simulation, if the system state changes during the simulation, then the first new state is recorded in the `valid_changes` list. Thus `valid_changes` is an array of the first new stat (if it exists) for each of the n=1000 simulations, and thus it has length $<= n = 1000$.

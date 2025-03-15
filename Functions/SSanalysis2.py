@@ -49,8 +49,10 @@ def simulate_bn(model, init_state, n_real=1000, histogram=False, trajectories=Fa
         t_first_change = np.where(results_integer[:,j] != init_state_integer)[0]
         if len(t_first_change) > 0:
             first_change[j] = results_integer[t_first_change[0],j]
+    # dictionary of valid states for each initial condition integer
     valid_states = {0:[1,2,4], 1:[0,3,5], 2:[3,0,6], 3:[2,1,7], 4:[5,6,0], 5:[4,7,1], 6:[7,4,2], 7:[6,5,3]}
     valid_changes = []
+    # checks state is in the list of valid states
     for k in range(len(first_change)):
         if first_change[k] in valid_states[init_state_integer]:
             valid_changes.append(first_change[k])

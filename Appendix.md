@@ -11,6 +11,7 @@ The files in this folder contain the scripts for running the various functions d
 - [exhaustive_fun.py](#exhaustive_funpy)
 - [bootstrapping.py](#bootstrappingpy)
 - [SSanalysis.py](#SSanalysispy)
+- [SSanalysis2.py](#SSanalysis2py)
 
 ### function.py
 
@@ -46,3 +47,9 @@ The files in this folder contain the scripts for running the various functions d
 
 - `simulate_bn` takes as inputs the PSN model (in Tellurium form), the initial state of the PSN, the number of realisations, and two optional arguments which print a Histogram of results and a trajectory plot if initialised to True. This function performs the Tellurium simulation for the given number of realisations, initialised at the given set of initial conditions. It then binarises the time-series data from this simulation using the threshold of 0.5. The function also uses binary encoding for easier identification of system states. For each simulation, if the system state changes during the simulation, then the first new state is recorded in the `valid_changes` list. Thus `valid_changes` is an array of the first new stat (if it exists) for each of the n=1000 simulations, and thus it has length $\leq n = 1000$. `valid_changes` is the output of the function.
 - The rest of the code in this script initialises the model (shown in Figure 11 in the project report). Then, using a for loop it iterates through all possible initial states and computes the estimate for the transition probabilities. These probabilities are used to form the transition matrix which is then printed.
+
+### SSanalysis2.py
+
+[SSanalysis2.py](Functions/SSanalysis2.py) is described in section 5.1 of the project report and is almost identical to [SSanalysis.py](Functions/SSanalysis.py) except that it contains a clause to check that in each transition, exactly one node changes state.
+
+- `valid_states` is a dictionary of the valid states corresponding to each set of initial conditions represented by the integers 0:7. A for loop simply checks that each new state is within this list of `valid_states`.
